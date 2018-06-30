@@ -1,0 +1,23 @@
+body {
+	background-color: $color-bcg;
+	font-family: 'Open Sans', sans-serif;
+}
+
+::selection {
+	 color: $color-accent;
+}
+
+.main-page {
+	text-align: center;
+	color: $color-white;
+	margin-top: 20vh;
+	p {
+		font-size: $f-size-base;
+		margin-bottom: 25px;
+	}
+	h1 {
+		font-weight: 300;
+		margin-top: 25px;
+		font-size: $f-size-header;
+	}
+}

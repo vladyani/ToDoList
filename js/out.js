@@ -94,7 +94,6 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n$(function () {\n\n  //tutaj umieszczamy nasz kod zgodznie z poleceniami\n\n\n});\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ }),
 
@@ -104,8 +103,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
-
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\n  background: blue; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./scss/main.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
