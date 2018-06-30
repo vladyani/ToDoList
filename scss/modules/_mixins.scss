@@ -1,0 +1,28 @@
+@mixin pseudoclass {
+	content: "";
+	display: block;
+}
+
+@mixin button ($diameter) {
+	width: $diameter;
+	height: $diameter;
+	background-color: $color-accent;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+
+	&::before,
+	&::after {
+		@include pseudoclass;
+		background-color: $color-white;
+		width: 4px;
+		height: 50px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&::after {
+		transform: translate(-50%, -50%) rotate(90deg);
+	}
+}
