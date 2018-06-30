@@ -90,11 +90,11 @@
 /*!*******************!*\
   !*** ./js/app.js ***!
   \*******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ../scss/main.scss */ \"./scss/main.scss\");\n\n$(function () {\n\n  //tutaj umieszczamy nasz kod zgodznie z poleceniami\n\n\n});\n\n//# sourceURL=webpack:///./js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n$(function () {\n\n  //tutaj umieszczamy nasz kod zgodznie z poleceniami\n  const startButton = $(\".begin-btn\");\n  startButton.on(\"click\", function (e) {});\n});\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ }),
 
@@ -105,7 +105,7 @@ eval("\n\n__webpack_require__(/*! ../scss/main.scss */ \"./scss/main.scss\");\n\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./scss/main.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"* {\\n  box-sizing: border-box;\\n  margin: 0;\\n  padding: 0; }\\n\\nbody {\\n  background-color: #1a1a1a;\\n  font-family: 'Open Sans', sans-serif; }\\n\\n::selection {\\n  color: #4f4ae5; }\\n\\n.main-page {\\n  text-align: center;\\n  color: #fff;\\n  margin-top: 20vh; }\\n  .main-page p {\\n    font-size: 1.3rem;\\n    margin-bottom: 25px; }\\n  .main-page h1 {\\n    font-weight: 300;\\n    margin-top: 25px;\\n    font-size: 3.2rem; }\\n\\n.main-page {\\n  text-align: center;\\n  color: #fff;\\n  margin-top: 20vh; }\\n  .main-page p {\\n    font-size: 1.3rem;\\n    margin-bottom: 25px; }\\n  .main-page h1 {\\n    font-weight: 300;\\n    margin-top: 25px;\\n    font-size: 3.2rem; }\\n  .main-page .begin-btn {\\n    width: 80px;\\n    height: 80px;\\n    background-color: #4f4ae5;\\n    border-radius: 50%;\\n    border: none;\\n    cursor: pointer;\\n    margin-top: 40px;\\n    position: relative; }\\n    .main-page .begin-btn::before, .main-page .begin-btn::after {\\n      content: \\\"\\\";\\n      display: block;\\n      background-color: #fff;\\n      width: 4px;\\n      height: 50px;\\n      position: absolute;\\n      left: 50%;\\n      top: 50%;\\n      transform: translate(-50%, -50%); }\\n    .main-page .begin-btn::after {\\n      transform: translate(-50%, -50%) rotate(90deg); }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./scss/main.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
