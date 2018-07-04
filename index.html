@@ -19,11 +19,27 @@
 			
 		</div>
 		<h1>LET'S R2-D-DOO!</h1>
-		<button class="begin-btn"></button>
+		<button class="start-btn"></button>
 	</main>
+	
+	<section class="form">
+		<form class="note-form" action="" name="note-form">
+			<input type="text" name="subject" placeholder="Subject" />
+			<input type="date" name="deadline" value="" placeholder="Date"/>
+			<input list="categories" name="category" placeholder="Category">
+			<datalist id="categories">
+				<option value="Red Cricle"></option>
+				<option value="Yellow Circle"></option>
+				<option value="Green Circle"></option>
+			</datalist>
+			<textarea name="description" placeholder="What do you need to do?"></textarea>
+			<buttton class="add-note-btn"></buttton>
+		</form>
+		
+	</section>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 	<script src="js/out.js"></script>
 </body>
 
