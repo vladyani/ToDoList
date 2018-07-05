@@ -31,10 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let sibling = this.nextElementSibling;
 
-        if (this.value === "" || this.value.legth < 3) {
+        if (this.value === "" || this.value.length < 3) {
+            this.style.border = " 1px solid #fc4d59";  
+            console.log(this.style)
             sibling.textContent = this.dataset.error;
             return false;
         } else {
+            this.style.border = "none";
             sibling.textContent = "";
             return true;
         }
@@ -43,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const addNote = function () {
         
+        let df = document.createDocumentFragment();
 
     };
 
