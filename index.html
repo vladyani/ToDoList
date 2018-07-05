@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon.ico">
     <title>R2-D-Doo List</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -26,13 +27,13 @@
             <output class="error-msg"></output>
             <input type="date" name="deadline" value="" placeholder="Date" data-error="Enter date, please!" required>
             <output class="error-msg"></output>
-            <input list="categories" name="category" placeholder="Category" data-error="Select category, please!" required>
+            <select name="category" data-error="Select category, please!" required>
+               <option class="dzik" hidden disabled selected value>Category</option>
+                <option class="red" value="Red Circle">Red Circle</option>
+				<option class="yellow" value="Yellow Circle">Yellow Circle</option>
+				<option class="green" value="Green Circle">Green Circle</option>
+           </select>
             <output class="error-msg"></output>
-            <datalist id="categories">
-				<option value="Red Circle"></option>
-				<option value="Yellow Circle"></option>
-				<option value="Green Circle"></option>
-			</datalist>
             <textarea name="description" placeholder="What do you need to do?" data-error="Complete the field, please!" required></textarea>
             <output class="error-msg"></output>
 
