@@ -42,9 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return true;
         }
     };
-
-
-    const addNote = function () {
+    
+    const addNote = function (e) {
         
         let df = document.createDocumentFragment();
 
