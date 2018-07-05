@@ -1,0 +1,33 @@
+.form {
+//		display: none;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	.note-form {
+		width: 33vw;
+		height: 75vh;
+		background-color: $color-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 2px 2px 10px 10px #191919;
+		input, textarea {
+			width: 70%;
+		}
+		input {
+			height: 3rem;
+		}
+		textarea {
+			resize: none;
+			height: 8rem;
+			
+		}
+		.add-note-btn {
+			@include button (80px);
+			margin-top: 40px;
+			position: relative;
+		}
+	}
+}

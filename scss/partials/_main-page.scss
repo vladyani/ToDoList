@@ -1,7 +1,8 @@
 .main-page {
+//	display: none;
 	text-align: center;
 	color: $color-white;
-	margin-top: 20vh;
+	padding-top: 20vh;
 	p {
 		font-size: $f-size-base;
 		margin-bottom: 25px;
@@ -12,7 +13,7 @@
 		font-size: $f-size-header;
 	}
 
-	.begin-btn {
+	.start-btn {
 		@include button (80px);
 		margin-top: 40px;
 		position: relative;
