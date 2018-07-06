@@ -100,23 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
             yellowOption = category.querySelector('.yellow');
 
         const priority = [redOption, greenOption, yellowOption];
-
-        priority.forEach(elem => {
-
-            switch (category.value) {
-                case elem.value:
-                    divNote.style.border = `1px solid ${elem.dataset.color}`;
-                    break;
-                case elem.value:
-                    divNote.style.border = `1px solid ${elem.dataset.color}`;
-                    break;
-                case elem.value:
-                    divNote.style.border = `1px solid ${elem.dataset.color}`;
-                    break;
-            }
+        
+        priority.forEach( elem =>{ 
+            if(category.value === elem.value) divNote.style.border = `1px solid ${elem.dataset.color}`
         });
         //
 
+        
         //append elements to divNote
         divNote.append(dateH2, subjectH1, descriptionP, infoBtn, successBtn);
 
