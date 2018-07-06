@@ -26,28 +26,108 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
+    const validateForm = function (e) {
 
-    const validateForm = function () {
 
         let sibling = this.nextElementSibling;
 
         if (this.value === "" || this.value.length < 3) {
-            this.style.border = " 1px solid #fc4d59";  
+            this.style.border = " 1px solid #fc4d59";
             console.log(this.style)
             sibling.textContent = this.dataset.error;
             return false;
         } else {
+            e.preventDefault();
             this.style.border = "none";
             sibling.textContent = "";
             return true;
         }
     };
-    
+
+
     const addNote = function (e) {
-        
+        e.preventDefault();
+        hideForm();
+
+        //value from inputs
+        const subjectVal = subject.value,
+            dateVal = date.value,
+            categoryVal = category.value,
+            descriptionVal = description.value;
+
+        //create object with input data
+        const data = {
+            subjectVal,
+            dateVal,
+            categoryVal,
+            descriptionVal
+        };
+
+        //container for notes
+        let divContainer = document.createElement('div');
+        divContainer.classList.add('container');
+        document.body.prepend(divContainer);
+
+        //document fragment contains our note
         let df = document.createDocumentFragment();
 
+        //note elements create
+        let divNote = document.createElement('div'),
+            dateH2 = document.createElement('h2'),
+            subjectH1 = document.createElement('h1'),
+            descriptionP = document.createElement('p'),
+            infoBtn = document.createElement('button'),
+            successBtn = document.createElement('button');
+
+        //add class to each note elem
+        divNote.classList.add('note');
+        dateH2.classList.add('note-date');
+        subjectH1.classList.add('note-subject');
+        descriptionP.classList.add('note-description');
+        infoBtn.classList.add('note-info-btn');
+        successBtn.classList.add('note-success-btn');
+
+
+        //bind data from inputs with elements in note 
+        dateH2.textContent = data.dateVal;
+        subjectH1.textContent = data.subjectVal;
+        descriptionP.textContent = data.descriptionVal;
+
+
+        //depends on users choice we take color from data-color of options and add as border for divNote element
+        let redOption = category.querySelector('.red'),
+            greenOption = category.querySelector('.green'),
+            yellowOption = category.querySelector('.yellow');
+
+        const priority = [redOption, greenOption, yellowOption];
+
+        priority.forEach(elem => {
+
+            switch (category.value) {
+                case elem.value:
+                    divNote.style.border = `1px solid ${elem.dataset.color}`;
+                    break;
+                case elem.value:
+                    divNote.style.border = `1px solid ${elem.dataset.color}`;
+                    break;
+                case elem.value:
+                    divNote.style.border = `1px solid ${elem.dataset.color}`;
+                    break;
+            }
+        });
+        //
+
+        //append elements to divNote
+        divNote.append(dateH2, subjectH1, descriptionP, infoBtn, successBtn);
+
+        //create document fragment our note
+        df.appendChild(divNote);
+
+        //we added fragment to divContainer ,which was added earlier to the page (prepend to body)
+        divContainer.append(df);
+
     };
+
 
 
     startButton.addEventListener("click", function () {

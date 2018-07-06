@@ -16,7 +16,7 @@
     <main class="main-page">
         <p>Seems that you have no to-doo things!</p>
         <div class="robot">
-
+            <img src="img/testLogo.png">
         </div>
         <h1>LET'S R2-D-DOO!</h1>
         <button class="start-btn"></button>
@@ -28,10 +28,10 @@
             <input type="date" name="deadline" value="" placeholder="Date" data-error="Enter date, please!" required>
             <output class="error-msg"></output>
             <select name="category" data-error="Select category, please!" required>
-               <option class="dzik" hidden disabled selected value>Category</option>
-                <option class="red" value="Red Circle">Red Circle</option>
-				<option class="yellow" value="Yellow Circle">Yellow Circle</option>
-				<option class="green" value="Green Circle">Green Circle</option>
+               <option hidden disabled selected value>Category</option>
+                <option class="red" value="red" data-color="#fc4d59">Red Circle</option>
+				<option class="yellow" value="yellow" data-color="#c3d500">Yellow Circle</option>
+				<option class="green" value="green" data-color="#4ad8a3">Green Circle</option>
            </select>
             <output class="error-msg"></output>
             <textarea name="description" placeholder="What do you need to do?" data-error="Complete the field, please!" required></textarea>
