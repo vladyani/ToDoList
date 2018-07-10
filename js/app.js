@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
             subjectH1 = document.createElement('h1'),
             descriptionP = document.createElement('p'),
             infoBtn = document.createElement('button'),
-            successBtn = document.createElement('button');
+            successBtn = document.createElement('button'),
+			addNewNoteBtn = document.createElement('button');
 
         //add class to each note elem
         divNote.classList.add('note');
@@ -86,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         descriptionP.classList.add('note-description');
         infoBtn.classList.add('note-info-btn');
         successBtn.classList.add('note-success-btn');
-
+		addNewNoteBtn.classList.add('add-new-note-btn');
 
         //bind data from inputs with elements in note 
         dateH2.textContent = data.dateVal;
@@ -102,7 +103,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const priority = [redOption, greenOption, yellowOption];
         
         priority.forEach( elem =>{ 
-            if(category.value === elem.value) divNote.style.border = `1px solid ${elem.dataset.color}`
+            if(category.value === elem.value) {
+				divNote.style.border = `1px solid ${elem.dataset.color}`
+				infoBtn.style.backgroundColor = `${elem.dataset.color}`
+				successBtn.style.backgroundColor = `${elem.dataset.color}` 
+			}
         });
         //
 
@@ -115,9 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //we added fragment to divContainer ,which was added earlier to the page (prepend to body)
         divContainer.append(df);
+		document.body.append(addNewNoteBtn);
 
     };
-
 
 
     startButton.addEventListener("click", function () {
@@ -127,9 +132,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //validation for each field
-    fieldsToValidate.forEach(field => field.addEventListener('blur', validateForm, false));
+//    fieldsToValidate.forEach(field => field.addEventListener('blur', validateForm, false));
     //adding new note
     addNoteButton.addEventListener("click", addNote, false);
-
+	
+	document.body.addEventListener("click", function(event) {
+		event.preventDefault();
+		const container = document.querySelector(".container");
+		if (event.target.classList.contains("add-new-note-btn")) {
+		   	container.style.display = "none";
+		   	showForm();
+			event.target.style.display = "none";					   
+	}
+	});
 
 });
