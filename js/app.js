@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const addNote = function (e) {
         e.preventDefault();
         hideForm();
-
+        
         //value from inputs
         const subjectVal = subject.value,
             dateVal = date.value,
@@ -62,12 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
             categoryVal,
             descriptionVal
         };
-
+       
+        
         //container for notes
-        let divContainer = document.createElement('div');
-        divContainer.classList.add('container');
-        document.body.prepend(divContainer);
-
+        let divContainer = document.querySelector('div.container');
+        //show our button add-new-note-btn
+        let addNewNoteBtn = document.querySelector(".add-new-note-btn");
+        
+        //if statement check if !== block make them block
+        if(divContainer.style.display !== "block" && addNewNoteBtn.style.display !== "block" ){
+            divContainer.style.display = "block";
+            addNewNoteBtn.style.display = "block";
+        };
+        
+        
         //document fragment contains our note
         let df = document.createDocumentFragment();
 
@@ -77,8 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             subjectH1 = document.createElement('h1'),
             descriptionP = document.createElement('p'),
             infoBtn = document.createElement('button'),
-            successBtn = document.createElement('button'),
-			addNewNoteBtn = document.createElement('button');
+            successBtn = document.createElement('button');
 
         //add class to each note elem
         divNote.classList.add('note');
@@ -87,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
         descriptionP.classList.add('note-description');
         infoBtn.classList.add('note-info-btn');
         successBtn.classList.add('note-success-btn');
-		addNewNoteBtn.classList.add('add-new-note-btn');
 
         //bind data from inputs with elements in note 
         dateH2.textContent = data.dateVal;
@@ -95,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         descriptionP.textContent = data.descriptionVal;
 
 
-        //depends on users choice we take color from data-color of options and add as border for divNote element
+        //depends on users choice we take color from data-color of options and add as border for divNote element , and color for button info and success
         let redOption = category.querySelector('.red'),
             greenOption = category.querySelector('.green'),
             yellowOption = category.querySelector('.yellow');
@@ -118,10 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
         //create document fragment our note
         df.appendChild(divNote);
 
-        //we added fragment to divContainer ,which was added earlier to the page (prepend to body)
-        divContainer.append(df);
-		document.body.append(addNewNoteBtn);
-
+        //we added fragment to divContainer
+        divContainer.appendChild(df);
     };
 
 
@@ -132,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //validation for each field
-//    fieldsToValidate.forEach(field => field.addEventListener('blur', validateForm, false));
+    fieldsToValidate.forEach(field => field.addEventListener('blur', validateForm, false));
     //adding new note
     addNoteButton.addEventListener("click", addNote, false);
 	
