@@ -1,0 +1,85 @@
+.container {
+	display: flex;
+	align-content: center;
+	padding: 20vh 25vw 0;
+	padding-bottom: 20px;
+	height: 75vh;
+	.note {
+		height: 200px;
+		width: 200px;
+		border-radius: 0.5rem;
+		padding: 15px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		position: relative;
+
+
+		.note-date {
+			color: $color-form-text;
+
+		}
+		.note-subject {
+			color: $color-font-input-active;
+			font-size: $f-size-base;
+		}
+		.note-description {
+			font-size: $f-size-base;
+			color: $color-font-input-active;
+
+		}
+		
+		.note-info-btn {
+			@include noteButton;
+			position: absolute;
+			right: 45px;
+			bottom: 8px;
+			&::after {
+				@include pseudoclass;
+				background-color: white;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				box-shadow: 7px 0 0 0 white,
+				14px 0 0 0 white;
+
+			}
+
+		}
+
+		.note-success-btn {
+
+			@include noteButton;
+			position: absolute;
+			right: 8px;
+			bottom: 8px;
+
+			&::after {
+				@include pseudoclass;
+				width: 7px;
+				height: 14px;
+				border: solid #fff;
+				border-width: 0 4px 4px 0;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(45deg) ;
+
+
+			}
+		}
+	}
+
+}
+
+
+.add-new-note-btn {
+	@include button(80px);
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-bottom: 5vh;
+
+
+}
